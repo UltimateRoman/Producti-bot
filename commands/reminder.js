@@ -20,7 +20,7 @@ module.exports = {
 			console.log(time); // hours group stored in time[1], minutes group stored in time[2]
 			
 			if(time[1] < 0 || time[1] > 23 || time[2] < 0 || time[2] > 59){
-				message.channel.send('error: given time not valid'); return;
+				message.channel.send('***Error:*** given time not valid'); return;
 			}
 			
 			var scheduledTime = new Date(); 
@@ -30,7 +30,7 @@ module.exports = {
 
 			if(args.length > 1){
 				message.channel.send('reminder set.').then(() => {
-					message.client.setTimeout(() => message.channel.send('reminder: ' + args.slice(1).join(' ')), waitTime);
+					message.client.setTimeout(() => message.channel.send('***Reminder:***' + args.slice(1).join(' ')), waitTime);
 				});
 				return;
 			} else{
@@ -51,7 +51,7 @@ module.exports = {
 					outputCalc %= 1000;
 				}
 				message.channel.send('reminder set.').then(() => {
-					message.client.setTimeout(() => message.channel.send('reminder (set ' + output.slice(0, -2) + ' ago)'), waitTime); 
+					message.client.setTimeout(() => message.channel.send('***Reminder*** (set ' + output.slice(0, -2) + ' ago)'), waitTime); 
 				});
 				return;
 			}
@@ -74,19 +74,19 @@ module.exports = {
 
 			if(args.length > 2){
 				message.channel.send('reminder set.').then(() => {
-					message.client.setTimeout(() => message.channel.send('reminder: ' + args.slice(2).join(' ')), waitTime);
+					message.client.setTimeout(() => message.channel.send('***Reminder:*** ' + args.slice(2).join(' ')), waitTime);
 				});
 				return;
 			} else{
 				message.channel.send('reminder set.').then(() => {
-					message.client.setTimeout(() => message.channel.send('reminder (set ' + args[0] + ' ' + args[1] + ' ago)'), waitTime); 
+					message.client.setTimeout(() => message.channel.send('***Reminder*** (set ' + args[0] + ' ' + args[1] + ' ago)'), waitTime); 
 				});
 				return;
 			}
 		} // end of time interval
 		
 
-		message.channel.send('error: incorrect format given.');
+		message.channel.send('***Error:*** incorrect format given.');
 	
 	}, // end of execute
 };

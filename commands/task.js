@@ -27,6 +27,7 @@ module.exports = {
         scheduledTime.setHours(time[1]); scheduledTime.setMinutes(time[2]); scheduledTime.setSeconds(0); scheduledTime.setMilliseconds(0);
         var waitTime = scheduledTime.getTime() - Date.now();
         if(waitTime < 0){ waitTime += 86400000; } // increment by a day
+        
 
         if(args.length > 1){
             try {
@@ -36,6 +37,7 @@ module.exports = {
                     start_hour: time[1],
                     start_min: time[2],
                 });
+                message.react('✅');
                 message.channel.send('Task added to your schedule.').then(() => {
                     client.setTimeout(() => client.users.cache
                         .get(userID)
@@ -43,7 +45,7 @@ module.exports = {
                             "Hey! It's time for your task: ***" + 
                             args.slice(1).join(' ') + "***"
                         )
-                    , waitTime);
+                , waitTime);
                 });
             }
             catch (e) {

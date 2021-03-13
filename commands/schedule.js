@@ -9,7 +9,8 @@ module.exports = {
         
 		const authorID = message.author.id
 
-		const taskObj = await task_queue.sync();
+        const taskObj = await task_queue.sync();
+        
 
 		let tasks = [];
         const myTasks = await task_queue.findAll({ where: { user: client.users.cache.get(authorID).username } })
