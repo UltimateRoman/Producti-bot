@@ -17,7 +17,7 @@ module.exports = {
 
     if(args.length >= 2 && expectedArg1.test(args[0])){
         var time = args[0].match(expectedArg1);
-        console.log(time); // hours group stored in time[1], minutes group stored in time[2]
+        //console.log(time); // hours group stored in time[1], minutes group stored in time[2]
         
         if(time[1] < 0 || time[1] > 23 || time[2] < 0 || time[2] > 59){
             message.channel.send('error: given time not valid'); return;
@@ -37,7 +37,7 @@ module.exports = {
                     start_hour: time[1],
                     start_min: time[2],
                 });
-                message.react('✅');
+                //message.react('✅');
                 message.channel.send('Task added to your schedule.').then(() => {
                     client.setTimeout(() => client.users.cache
                         .get(userID)

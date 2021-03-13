@@ -27,6 +27,7 @@ module.exports = {
             tasks.forEach((task,id) => {
                 message.channel.send(`${id+1}. **${task.taskName}** @ ${task.startTime} hours , Task status: ${task.status}`)		
             })
+	    await message.channel.send("react with ✅ to cross off a task");
         }
         else {
             await message.channel.send("**You have no tasks scheduled for today.**");
