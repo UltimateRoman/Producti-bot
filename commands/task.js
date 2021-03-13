@@ -3,7 +3,8 @@ const task_queue = require("../sqlitedb");
 module.exports = {
 	name: 'task',
 	aliases: [],
-	description: 'helps user organize their tasks by adding them to a queue',
+    description: 'helps user organize their tasks by adding them to a queue',
+    usage: '!task [time(24 hours)] [task description]',
 	execute: async(message, args, client)=>{
 	
 		if(args.length < 1){
@@ -39,9 +40,10 @@ module.exports = {
                     client.setTimeout(() => client.users.cache
                         .get(userID)
                         .send(
-                            "Hey! It's time for your task: " + 
-                            args.slice(1).join(' ')
-                    ), waitTime);
+                            "Hey! It's time for your task: ***" + 
+                            args.slice(1).join(' ') + "***"
+                        )
+                    , waitTime);
                 });
             }
             catch (e) {

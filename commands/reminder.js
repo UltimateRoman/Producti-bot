@@ -3,6 +3,7 @@ module.exports = {
 	name: 'reminder',
 	aliases: [],
 	description: 'sets a reminder for a given time, or for a given interval from the current time',
+	usage: '!reminder [time(24 hours)] [reminder message]',
 	execute(message, args){
 	
 		if(args.length < 1){

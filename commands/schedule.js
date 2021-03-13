@@ -1,9 +1,10 @@
 const task_queue = require('../sqlitedb');
 
 module.exports = {
-	name: 'list',
+	name: 'schedule',
 	aliases: [],
-	description: 'displays the current queue of tasks',
+    description: 'displays the current queue of scheduled tasks and their status',
+    usage: '!schedule',
 	execute: async(message, args, client)=>{
         
 		const authorID = message.author.id
@@ -21,13 +22,13 @@ module.exports = {
 		}))
         
         if(tasks.length != 0) {
-            await message.channel.send("Your schedule for today:");
+            await message.channel.send("**Your schedule for today:**");
             tasks.forEach((task,id) => {
-                message.channel.send(`${id+1}. ${task.taskName} @ ${task.startTime} hours , Task status: ${task.status}`)		
+                message.channel.send(`${id+1}. **${task.taskName}** @ ${task.startTime} hours , Task status: ${task.status}`)		
             })
         }
         else {
-            await message.channel.send("You have no tasks scheduled for today.");
+            await message.channel.send("**You have no tasks scheduled for today.**");
         }
     }
     
