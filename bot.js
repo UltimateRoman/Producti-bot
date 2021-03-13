@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
 const{ prefix, token } = require('./config.json');
 
@@ -13,9 +14,14 @@ client.login(token);
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
+
 //===== bot commands =====//
 
-client.once('ready', {
+client.once('ready', () => {
 
 	console.log('Bot setup successful');
 
@@ -28,10 +34,10 @@ client.on('message', message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
 
-	if(!client.commands.has(command)){ return; }
+	if(!client.commands.has(command)){ console.log('command not found'); return; }
 
 	try{
-		bot.commands.get(command).execute(message, args);
+		client.commands.get(command).execute(message, args);
 	}catch(error){
 		console.error(error);
 		message.channel.send('An unknown error occurred.')
