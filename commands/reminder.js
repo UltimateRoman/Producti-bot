@@ -1,6 +1,7 @@
 
 module.exports = {
 	name: 'reminder',
+	aliases: []
 	description: 'sets a reminder for a given time, or for a given interval from the current time',
 	execute(message, args){
 	
@@ -8,8 +9,8 @@ module.exports = {
 			message.channel.send('error: no time or time interval given'); return;
 		}
 		
-		// var repeatTrue = /^repeat$/i;  // says to repeat the reminder every day or every interval, not yet implemented
-		
+		//var repeat = false;  // says to repeat the reminder every day or every interval, not yet implemented
+		//if((/^repeat$/i).test(args[0])){ repeat = true; args.shift(); }
 
 		var expectedArg1 = /(\d+)\:(\d+)/i;  // number:number, as a time value
 
