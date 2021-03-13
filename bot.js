@@ -1,37 +1,10 @@
 const Discord = require('discord.js');
-const Sequelize = require('sequelize');
 const fs = require('fs');
+
+task_queue = require('./sqlitedb');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
-
-const sequelize = new Sequelize('database', 'user', 'password', {
-	host: 'localhost',
-	dialect: 'sqlite',
-	logging: false,
-	storage: 'database.sqlite',
-});
-
-const task_queue = sequelize.define('task_queue', {
-	taskname: {
-			type: Sequelize.STRING,
-			primaryKey: true,
-	},
-	user: {
-		type: Sequelize.STRING,
-		allowNull: false,
-	},
-	start_hour: {
-			type: Sequelize.INTEGER,
-			allowNull: false,
-	},
-	start_min: {
-			type: Sequelize.INTEGER,
-			allowNull: false
-	},
-}, {
-	timestamps: false
-});
 
 
 const{ prefix, token } = require('./config.json');
@@ -54,7 +27,7 @@ for (const file of commandFiles) {
 client.once('ready', () => {
 
 	console.log('Bot setup successful');
-	task_queue.sync({ force: true })
+	task_queue.sync({force: true});
 }); // end of client.once ready
 
 
@@ -67,7 +40,7 @@ client.on('message', message => {
 	if(!client.commands.has(command)){ console.log('command not found'); return; }
 
 	try{
-		client.commands.get(command).execute(message, args);
+		client.commands.get(command).execute(message, args, client);
 	}catch(error){
 		console.error(error);
 		message.channel.send('An unknown error occurred.')
