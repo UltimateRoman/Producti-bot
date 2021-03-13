@@ -38,15 +38,21 @@ module.exports = {
                     start_min: time[2],
                 });
                 //message.react('✅');
-                message.channel.send('Task added to your schedule.').then(() => {
-                    client.setTimeout(() => client.users.cache
-                        .get(userID)
-                        .send(
-                            "Hey! It's time for your task: ***" + 
-                            args.slice(1).join(' ') + "***"
-                        )
-                , waitTime);
-                });
+		message.channel.send('Task added to your schedule.').then(() => {
+			// send reminder, but only if task is not completed in schedule
+			client.setTimeout(async () => {
+				var taskToRemind = await task_queue.findOne({
+					where: {
+						taskname: args.slice(1).join(' '),
+						user: client.users.cache.get(userID).username
+					}
+				});
+				if(taskToRemind && !taskToRemind.completed){			
+					client.users.cache.get(userID).send("Hey! It's time for your task: ***" + args.slice(1).join(' ') + "***");
+				}
+                	}, waitTime);
+		
+		});
             }
             catch (e) {
                 if (e.name === 'SequelizeUniqueConstraintError') {
