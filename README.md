@@ -1,2 +1,2 @@
-# Producti-bot
-Just another rather very interesting Discord bot
+# Producti-Bot
+Not your everyday todo-ist.
