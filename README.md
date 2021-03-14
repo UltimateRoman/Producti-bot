@@ -4,8 +4,6 @@ Do you wish you had an assistant to remind you of pending tasks or probably just
 
 ## PRODUCTI-BOT
 
-### Not your everyday to-do list.
-
 <img width="1024" alt="Producti-Bot" src="https://user-images.githubusercontent.com/77555172/111062079-1021fd80-84a7-11eb-8ad5-13ac7e1103e1.png">
 
 With technology advancing these days, people prefer messaging to any other form of communication, and that also includes reminders. Producti-Bot is a bot that implements using social media (in this case, Discord) as a way to make people aware of activities to be carried out while still being able to stay online.
