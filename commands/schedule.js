@@ -15,8 +15,11 @@ module.exports = {
 		let tasks = [];
         const myTasks = await task_queue.findAll({ where: { user: client.users.cache.get(authorID).username } })
 		await Promise.all(myTasks.map(async (task) => {	
-            const taskName = task.taskname;			
-            const startTime = `${task.start_hour} : ${task.start_min}`;
+            const taskName = task.taskname;
+            var start_min_padded = '';
+            if(task.start_min < 10){ start_min_padded = '0' + task.start_min; }
+            else{ start_min_padded = task.start_min; } 		
+            const startTime = `${task.start_hour}:${start_min_padded}`;
             const status = task.completed ? "Completed" : "Not completed";
 			tasks.push({ taskName: taskName, startTime: startTime , status: status})
 			return Promise.resolve();
