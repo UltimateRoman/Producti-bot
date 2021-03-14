@@ -1,7 +1,7 @@
-### Producti-Bot
-# Not your everyday to-do list.
+## Producti-Bot
+### Not your everyday to-do list.
 
-<img width="1024" alt="Producti-Bot Cover" src="https://user-images.githubusercontent.com/77555172/111061988-7ce8c800-84a6-11eb-83e0-d3672b276d02.png">
+<img width="578" alt="Producti-Bot Cover" src="https://user-images.githubusercontent.com/77555172/111061988-7ce8c800-84a6-11eb-83e0-d3672b276d02.png">
 
 
 
