@@ -1,3 +1,10 @@
+### Producti-Bot
+# Not your everyday to-do list.
+
+<img width="1024" alt="Producti-Bot Cover" src="https://user-images.githubusercontent.com/77555172/111061988-7ce8c800-84a6-11eb-83e0-d3672b276d02.png">
+
+
+
 ## WHAT IT DOES
 
 **Producti-Bot** is a Discord bot that helps set agendas for organisations of schedules for it's users so you never miss a task ever again and improve your productivity! 
@@ -15,7 +22,5 @@ The main command prompts that have been enabled on it (which have been made acce
 5) **!timezone {UTC +/- offset}** — _lets the user set their own timezone for task reminders_.
 
 N.B.: Only task creators can tamper with the to-do lists they create.
-
-
 
 © 2021. **The Producti-Bot Team**. All rights reserved.
