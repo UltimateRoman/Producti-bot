@@ -44,7 +44,7 @@ module.exports = {
 		catch (e) {
 			console.log(e);
 		}
-		message.channel.send('Timezone successfully set.);
+		message.channel.send('Timezone successfully set');
 		return;
 
 	}
