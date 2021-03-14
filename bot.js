@@ -56,7 +56,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 		if(!client.reactCommands.has(reaction.emoji.name)){ console.log('reaction command not found'); return; }
 
 		try{
-			client.reactCommands.get(reaction.emoji.name).execute(reaction, user);
+			client.reactCommands.get(reaction.emoji.name).execute(reaction, user, client);
 		}catch(error){
 			console(error);
 			message.channel.send('An unknown error occurred');

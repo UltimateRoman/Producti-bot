@@ -5,14 +5,14 @@ module.exports = {
 	aliases: [],
 	description: 'resolves the task reacted to from !schedule',
 	usage: '',
-	execute: async(reaction, user) => {
+	execute: async(reaction, user, client) => {
 
 		var messageData = reaction.message.content.split('**'); // if reaction is to a valid task from !schedule, messageData[1] should be the task
 		//console.log(messageData); // debug
 
 		const memes = ['https://brobible.com/wp-content/uploads/2020/10/50-best-memes-iq-joke-math.jpg',
                 'https://petpress.net/wp-content/uploads/2019/12/corgi-12.jpg',
-                'https://www.barnorama.com/wp-content/uploads/2019/04/christian_memes_30.jpg',
+                'https://www.rd.com/wp-content/uploads/2019/04/01-Hilarious-Dog-Memes.jpg',
                 'https://brobible.com/wp-content/uploads/2020/09/50-best-memes-understanding-jokes.jpg',
 				'https://petpress.net/wp-content/uploads/2019/12/corgi-1.jpg',
 				'https://preview.redd.it/p2htn4m2olh21.png?width=960&crop=smart&auto=webp&s=45ff517fec9fce9dee6d3f96bd326259ec5b5a3a',
@@ -31,10 +31,10 @@ module.exports = {
 		});
 		
 		if(taskReacted){
-			reaction.message.channel.send('🌟 Task: \"' + messageData[1] + '\" completed! Heres your reward 🌟');
+			reaction.message.channel.send('🌟 Task: \"***' + messageData[1] + '***\" completed! 🌟 Check your DM for the reward!');
 			const meme_num = Math.floor(Math.random() * 5);
 			const meme_link = memes[meme_num];
-			reaction.message.channel.send({files: [meme_link]});
+			client.users.cache.get(user.id).send("Congrats on completing '" + messageData[1] +  "' 🌟 Here's your reward!",{files: [meme_link]});
 			await task_queue.update({ completed: true }, {
 				where: {
 					taskname:messageData[1],
