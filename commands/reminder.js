@@ -1,10 +1,11 @@
+const users = require("../sqlitedb-users");
 
 module.exports = {
 	name: 'reminder',
 	aliases: [],
 	description: 'sets a reminder for a given time, or for a given interval from the current time',
 	usage: '!reminder [time(24 hours)] [reminder message]',
-	execute(message, args){
+	execute: async(message, args) => {
 	
 		if(args.length < 1){
 			message.channel.send('error: no time or time interval given'); return;
@@ -25,7 +26,14 @@ module.exports = {
 			
 			var scheduledTime = new Date(); 
 			scheduledTime.setHours(time[1]); scheduledTime.setMinutes(time[2]); scheduledTime.setSeconds(0); scheduledTime.setMilliseconds(0);
-			var waitTime = scheduledTime.getTime() - Date.now();
+			var waitTime = scheduledTime.getTime() - (scheduledTime.getTimezoneOffset() * 60000) - Date.now();
+			const userEntry = await users.findOne({ where: {user_id:message.author.id} });
+			if(userEntry){
+				//console.log('found timezone'); console.log(offset);
+				var offset = await userEntry.get('timezone');
+				waitTime -= offset;
+			}
+
 			if(waitTime < 0){ waitTime += 86400000; } // increment by a day
 
 			if(args.length > 1){

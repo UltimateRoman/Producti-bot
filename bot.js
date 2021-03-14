@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 
 task_queue = require('./sqlitedb');
+users = require('./sqlitedb-users');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -32,9 +33,9 @@ for (const file of reactFiles) {
 //===== bot commands =====//
 
 client.once('ready', () => {
-
 	console.log('Bot setup successful');
 	task_queue.sync({force: true});
+	users.sync({force: true});
 }); // end of client.once ready
 
 
