@@ -41,7 +41,7 @@ There were a lot of hurdles we had to cross coupled with the difference in time 
 
 We are proud of being able to make a Discord bot that can help in real-life situations for not only students but every other individual. 
 
-# WHAT WE LEARNT
+# WHAT WE LEARNED
 
 We improvised our design skills and better understood how to work with APIs (from Discord), how to code a bot with JavaScript, how to host it using Linode and, how to make a bot perform specific tasks for various individuals.
 
