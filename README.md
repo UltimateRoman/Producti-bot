@@ -3,7 +3,7 @@
 ### Not your everyday to-do list.
 
 
-<img width="578" alt="Producti-Bot" src="https://user-images.githubusercontent.com/77555172/111062079-1021fd80-84a7-11eb-8ad5-13ac7e1103e1.png">
+<img width="1024" alt="Producti-Bot" src="https://user-images.githubusercontent.com/77555172/111062079-1021fd80-84a7-11eb-8ad5-13ac7e1103e1.png">
 
 
 # WHAT IT DOES
