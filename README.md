@@ -11,7 +11,7 @@ Do you wish you had an assistant to remind you of pending tasks or probably just
 With technology advancing these days, people prefer messaging to any other form of communication, and that also includes reminders. Producti-Bot is a bot that implements using social media (in this case, Discord) as a way to make people aware of activities to be carried out while still being able to stay online.
 
 
-# WHAT IT DOES
+# What It Does
 
 **Producti-Bot** is a Discord bot that helps set agendas for organisations of schedules for it's users so you never miss a task ever again and improve your productivity! 
 
@@ -29,23 +29,23 @@ The main command prompts that have been enabled on it (which have been made acce
 
 N.B.: Only task creators can tweak the to-do lists they create, and completed tasks get rewards (memes) through direct messages to make it enjoyable.
 
-# HOW WE BUILT IT
+# How We Built It
 
 Producti-Bot was built using Node.js with Discord.js - to allow easy access to the Discord API. We used Sequelize and SQLite for the database. We also utilized Linode for the Virtual Private Server (VPS) to host the bot so that it could be accessible to anyone from anywhere.
 
-# CHALLENGES WE RAN INTO
+# Challenges We Ran Into
 
 There were a lot of hurdles we had to cross coupled with the difference in time zones. Firstly, we had to ensure that Producti-Bot sent only reminders for tasks that were yet to be completed. Afterward, we implemented a change in time zones to ensure a smooth running of task reminders via direct messaging.
 
-# ACCOMPLISHMENTS THAT WE'RE PROUD OF
+# Accomplishments That We're Proud Of
 
 We are proud of being able to make a Discord bot that can help in real-life situations for not only students but every other individual. 
 
-# WHAT WE LEARNED
+# What We Learned
 
 We improvised our design skills and better understood how to work with APIs (from Discord), how to code a bot with JavaScript, how to host it using Linode and, how to make a bot perform specific tasks for various individuals.
 
-# WHAT'S NEXT FOR PRODUCTI-BOT
+# What's Next For Producti-Bot
 
 We hope to provide a system by which a user can set task interval times (that is 5 - 10 minutes, etcetera). We also hope to influence other hackers or organizations to implement social media to-do list bots.
 
