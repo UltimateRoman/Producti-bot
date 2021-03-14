@@ -14,7 +14,7 @@ The main command prompts that have been enabled on it (which have been made acce
 
 5) **!timezone {UTC +/- offset}** — _lets the user set their own timezone for task reminders_.
 
-N.B.: We've implemented a system in which only task creators can tamper with the to-do lists they create.
+N.B.: Only task creators can tamper with the to-do lists they create.
 
 
 
