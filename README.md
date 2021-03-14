@@ -1,11 +1,9 @@
-## Producti-Bot
+# PRODUCTI-BOT
 ### Not your everyday to-do list.
 
-<img width="578" alt="Producti-Bot Cover" src="https://user-images.githubusercontent.com/77555172/111061988-7ce8c800-84a6-11eb-83e0-d3672b276d02.png">
+<img width="578" alt="Producti-Bot" src="https://user-images.githubusercontent.com/77555172/111062079-1021fd80-84a7-11eb-8ad5-13ac7e1103e1.png">
 
-
-
-## WHAT IT DOES
+# WHAT IT DOES
 
 **Producti-Bot** is a Discord bot that helps set agendas for organisations of schedules for it's users so you never miss a task ever again and improve your productivity! 
 
